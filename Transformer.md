@@ -20,11 +20,11 @@ Attention(Q, K, V) = softmax(Q·Kᵀ / √d) · V
 ```
 
 **Step 1:** `U = Q·Kᵀ` → `[t × t]`  
-`U[r, c]` = how much token `r` wants to attend to token `c`. Correlation matrix. Diagonal should be high. For causal (decoder) masking, zero out the upper triangle.
+`U[r, c]` = how much token `r` wants to attend to token `c`. Correlation matrix. Diagonal should be high. If dont want to see future tokens - take lower triangle.
 
 **Step 2:** `A = softmax(U / √d)` → `[t × t]`  
 Softmax taken row-wise — each row sums to 1. Row `r` = "given token `r`, how much attention weight goes to each other token."  
-`√d` prevents dot products from getting too large before softmax.
+`√d` prevents dot products from getting too large before softmax ?? some backprop thing.
 
 **Step 3:** `Output = A·V` → `[t × d]`  
 Each output row `r` is a weighted sum of all value vectors. Token `r`'s new representation, after pulling in information from all other tokens according to attention weights.
