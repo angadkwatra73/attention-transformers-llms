@@ -2,7 +2,7 @@
 
 ## Introduction to how GPT-2 Works
 
-Learning source: [HyperAccel Transformer Blog]{https://hyper-accel.github.io/en/posts/what-is-the-transformers/}
+Learning source: [HyperAccel Transformer Blog](https://hyper-accel.github.io/en/posts/what-is-the-transformers/)
 
 ![GPT-2 Architecture](./imgs/decoder_transformer_architecture.png)
 
